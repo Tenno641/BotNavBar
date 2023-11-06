@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
 
+
             if (item.getItemId() == R.id.favItem && !item.isChecked()) {
                 replaceFragment(new favfragment());
                 return true;
