@@ -15,24 +15,24 @@ import com.example.botnavbar.botnavbar.models.HotelModel;
 
 import java.util.List;
 
-public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeSummerItemHolder> {
+public class HomeDiscountsRecyclerViewAdapter extends RecyclerView.Adapter<HomeDiscountItemHolder>{
 
     List<HotelModel> hotels;
 
-    public HomeRecyclerViewAdapter(List<HotelModel> hotels) {
+    public HomeDiscountsRecyclerViewAdapter(List<HotelModel> hotels) {
         this.hotels = hotels;
     }
 
     @NonNull
     @Override
-    public HomeSummerItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_summer_hotel_item, parent, false);
-        return new HomeSummerItemHolder(view);
+    public HomeDiscountItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_discounts_hotel_item, parent, false);
+        return new HomeDiscountItemHolder(view);
     }
 
     @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(@NonNull HomeSummerItemHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HomeDiscountItemHolder holder, int position) {
         HotelModel hotel = hotels.get(position);
 
         holder.hotelImage.setImageResource(hotel.getImage());
@@ -40,8 +40,6 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeSummerItem
         holder.HotelLocation.setText(hotel.getLocation());
         holder.HotelRating.setText(Double.toString(hotel.getRating()));
         holder.HotelPrice.setText(String.valueOf(hotel.getPrice()));
-
-
 
     }
 
@@ -51,7 +49,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeSummerItem
     }
 }
 
-class HomeSummerItemHolder extends RecyclerView.ViewHolder {
+class HomeDiscountItemHolder extends RecyclerView.ViewHolder {
 
     ImageView hotelImage;
     TextView hotelName;
@@ -59,7 +57,7 @@ class HomeSummerItemHolder extends RecyclerView.ViewHolder {
     TextView HotelRating;
     TextView HotelPrice;
 
-    public HomeSummerItemHolder(@NonNull View itemView) {
+    public HomeDiscountItemHolder(@NonNull View itemView) {
         super(itemView);
 
         hotelImage = itemView.findViewById(R.id.hotelImage);
