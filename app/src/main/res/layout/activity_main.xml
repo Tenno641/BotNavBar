@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_background"
     tools:context=".botnavbar.ui.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/homeFrame"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@id/botnav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -23,16 +23,13 @@
         android:id="@+id/botnav"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/botbavbar_backgroud"
+        android:background="@color/golden"
+        app:itemPaddingTop="4dp"
         app:itemIconTint="@color/botnavbar_items"
-        app:itemPaddingTop="16dp"
+        app:itemTextColor="@color/botnavbar_items"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/home_navigation_items" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

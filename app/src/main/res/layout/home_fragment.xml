@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/app_background"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +21,8 @@
             android:imeOptions="actionDone"
             android:autofillHints=""
             android:background="@drawable/edittext_background"
-            android:hint="Search.."
+            android:hint="@string/search"
+            android:textColor="@color/brown"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textColorHint="@color/black"
@@ -33,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/summer_hotels"
-            android:textColor="@color/black"
+            android:textColor="@color/brown"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/searchBar"
@@ -54,7 +56,7 @@
             android:id="@+id/DiscountsTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Discounts"
+            android:text="@string/discounts"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"

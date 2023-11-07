@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="350dp"
     android:layout_height="165dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
     android:layout_marginBottom="32dp"
@@ -16,10 +17,10 @@
             android:id="@+id/hotelImage"
             android:layout_width="180dp"
             android:layout_height="match_parent"
-            android:background="@drawable/botbavbar_backgroud"
+            android:background="@color/golden"
             android:scaleType="centerCrop"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/hotelName"
@@ -27,11 +28,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="HotelName"
-            android:textColor="@color/black"
+            tools:text="HotelName"
+            android:textColor="@color/brown"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/hotelImage"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/locationTV"
@@ -39,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:text="Location"
+            tools:text="Location"
             android:textSize="11sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@id/ratingTV"
@@ -61,8 +62,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="2dp"
-            android:text="2.5"
-            android:textColor="@color/black"
+            tools:text="2.5"
+            android:textColor="@color/brown"
             android:textSize="11sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/star"
@@ -74,8 +75,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="EGP 3589"
-            android:textColor="@color/black"
+            tools:text="EGP 3589"
+            android:textColor="@color/brown"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/star" />
@@ -84,10 +85,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
-            android:text="Starting from"
+            android:text="@string/starting_from"
+            android:textColor="@color/brown"
             android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="@id/price"
-            android:textColor="@color/black"
             app:layout_constraintEnd_toStartOf="@id/price"
             app:layout_constraintTop_toTopOf="@id/price" />
 
