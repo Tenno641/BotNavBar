@@ -1,4 +1,4 @@
-package com.example.botnavbar.botnavbar.ui;
+package com.example.aliva.aliva.ui;
 
 import android.os.Bundle;
 
@@ -8,22 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.botnavbar.R;
+import com.example.aliva.R;
 
-public class setFragment extends Fragment {
+public class favfragment extends Fragment {
 
-    public setFragment() {
+    public favfragment() {
 
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_set, container, false);
+        return inflater.inflate(R.layout.favfragment, container, false);
     }
 }

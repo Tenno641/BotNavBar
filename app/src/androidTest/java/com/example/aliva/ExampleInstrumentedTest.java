@@ -1,4 +1,4 @@
-package com.example.botnavbar;
+package com.example.aliva;
 
 import android.content.Context;
 

@@ -1,6 +1,8 @@
-package com.example.botnavbar.botnavbar.adapters;
+package com.example.aliva.aliva.adapters;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,16 +12,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.botnavbar.R;
-import com.example.botnavbar.botnavbar.models.HotelModel;
+import com.example.aliva.R;
+import com.example.aliva.aliva.models.HotelModel;
+import com.example.aliva.aliva.ui.SelectedHotel;
 
 import java.util.List;
 
 public class HomeDiscountsRecyclerViewAdapter extends RecyclerView.Adapter<HomeDiscountItemHolder>{
 
     List<HotelModel> hotels;
+    Context context;
 
-    public HomeDiscountsRecyclerViewAdapter(List<HotelModel> hotels) {
+    public HomeDiscountsRecyclerViewAdapter(Context context, List<HotelModel> hotels) {
+        this.context = context;
         this.hotels = hotels;
     }
 
@@ -40,6 +45,17 @@ public class HomeDiscountsRecyclerViewAdapter extends RecyclerView.Adapter<HomeD
         holder.HotelLocation.setText(hotel.getLocation());
         holder.HotelRating.setText(Double.toString(hotel.getRating()));
         holder.HotelPrice.setText(String.valueOf(hotel.getPrice()));
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, SelectedHotel.class);
+            intent.putExtra("image", hotel.getImage());
+            intent.putExtra("name", hotel.getName());
+            intent.putExtra("location", hotel.getLocation());
+            intent.putExtra("description", hotel.getDescription());
+            intent.putExtra("rating", hotel.getRating());
+            intent.putExtra("price", hotel.getPrice());
+            holder.itemView.getContext().startActivity(intent);
+        });
 
     }
 

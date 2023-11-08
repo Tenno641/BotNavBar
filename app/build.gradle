@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.botnavbar'
+    namespace 'com.example.aliva'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.botnavbar"
+        applicationId "com.example.aliva"
         minSdk 26
         targetSdk 33
         versionCode 1

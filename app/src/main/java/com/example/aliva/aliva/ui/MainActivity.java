@@ -1,11 +1,11 @@
-package com.example.botnavbar.botnavbar.ui;
+package com.example.aliva.aliva.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
-import com.example.botnavbar.R;
+import com.example.aliva.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

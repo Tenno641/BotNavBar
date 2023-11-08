@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/app_background">
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="250dp"
         android:background="@color/golden"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,32 +21,33 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        tools:text="Test"
         android:textColor="@color/brown"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image" />
+        app:layout_constraintTop_toBottomOf="@id/image"
+        tools:text="Test" />
 
     <TextView
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        tools:text="@string/location"
         android:textColor="@color/brown"
         app:layout_constraintStart_toStartOf="@id/hotelName"
-        app:layout_constraintTop_toBottomOf="@id/hotelName" />
+        app:layout_constraintTop_toBottomOf="@id/hotelName"
+        tools:text="@string/location" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        tools:text="Description"
         android:textColor="@color/brown"
+        app:layout_constraintEnd_toStartOf="@id/ratingTV"
         app:layout_constraintStart_toStartOf="@id/hotelName"
-        app:layout_constraintTop_toBottomOf="@id/location" />
+        app:layout_constraintTop_toBottomOf="@id/location"
+        tools:text="Description" />
 
     <ImageView
         android:id="@+id/star"
@@ -63,25 +64,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="2dp"
-        tools:text="2.5"
         android:textColor="@color/brown"
         android:textSize="11sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/star"
         app:layout_constraintEnd_toStartOf="@id/star"
-        app:layout_constraintTop_toTopOf="@id/star" />
+        app:layout_constraintTop_toTopOf="@id/star"
+        tools:text="2.5" />
 
     <TextView
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
-        tools:text="EGP 3,589"
         android:textColor="@color/brown"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/star"
         app:layout_constraintTop_toBottomOf="@id/description"
-        android:layout_marginTop="32dp"/>
+        tools:text="EGP 3,589" />
 
     <TextView
         android:layout_width="wrap_content"
