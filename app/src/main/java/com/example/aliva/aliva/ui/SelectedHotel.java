@@ -3,9 +3,12 @@ package com.example.aliva.aliva.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.aliva.R;
 
@@ -13,6 +16,7 @@ public class SelectedHotel extends AppCompatActivity {
 
     ImageView hotelImage;
     TextView hotelName, hotelLocation, hotelDescription, hotelRating, hotelPrice;
+    Button backButton, favButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,8 @@ public class SelectedHotel extends AppCompatActivity {
         hotelDescription = findViewById(R.id.description);
         hotelRating = findViewById(R.id.ratingTV);
         hotelPrice = findViewById(R.id.price);
+        backButton = findViewById(R.id.backBtn);
+        favButton = findViewById(R.id.favBtn);
 
         Intent intent = getIntent();
         int image = intent.getIntExtra("image", 0);
@@ -40,6 +46,15 @@ public class SelectedHotel extends AppCompatActivity {
         hotelDescription.setText(description);
         hotelRating.setText(String.valueOf(rating));
         hotelPrice.setText(String.valueOf(price));
+
+        backButton.setOnClickListener(v -> finish());
+        favButton.setOnClickListener(v -> {
+
+            favButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_favorite_24, 0, 0, 0);
+
+            // Associated with database
+
+        });
 
     }
 }
