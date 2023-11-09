@@ -17,6 +17,7 @@ public class SelectedHotel extends AppCompatActivity {
     ImageView hotelImage;
     TextView hotelName, hotelLocation, hotelDescription, hotelRating, hotelPrice;
     Button backButton, favButton;
+    boolean isFav = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +51,16 @@ public class SelectedHotel extends AppCompatActivity {
         backButton.setOnClickListener(v -> finish());
         favButton.setOnClickListener(v -> {
 
-            favButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_favorite_24, 0, 0, 0);
-
             // Associated with database
+
+            if (isFav) {
+                favButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_favorite_border_24, 0, 0, 0);
+                isFav = false;
+            }
+            else {
+                favButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_favorite_24, 0, 0, 0);
+                isFav = true;
+            }
 
         });
 
