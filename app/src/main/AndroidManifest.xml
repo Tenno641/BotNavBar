@@ -20,7 +20,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".aliva.ui.MainActivity"
+            android:name=".aliva.ui.FirstPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +32,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".aliva.ui.FirstPage"/>
+        <activity android:name=".aliva.ui.MainActivity"/>
         <activity android:name=".aliva.ui.LoginActivity"/>
         <activity android:name=".aliva.ui.RegisterActivity"/>
     </application>
