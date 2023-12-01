@@ -9,7 +9,7 @@ public class DataBaseAdapter {
     static DataBaseHelper dataBaseHelper;
 
     public DataBaseAdapter(Context context) {
-        SQLiteDatabase readable = dataBaseHelper
+        dataBaseHelper = new DataBaseHelper(context);
     }
 
     public static class DataBaseHelper extends SQLiteOpenHelper {
