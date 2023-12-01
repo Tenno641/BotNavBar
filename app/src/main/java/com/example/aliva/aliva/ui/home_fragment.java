@@ -16,7 +16,6 @@ import com.example.aliva.aliva.adapters.HomeDiscountsRecyclerViewAdapter;
 import com.example.aliva.aliva.adapters.HomeRecyclerViewAdapter;
 import com.example.aliva.aliva.models.HotelModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class home_fragment extends Fragment {
@@ -47,18 +46,17 @@ public class home_fragment extends Fragment {
         Context context = getContext();
 
         DataBaseAdapter dataBaseAdapter = new DataBaseAdapter(context);
-        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
 
         List<HotelModel> preMadeHotels = dataBaseAdapter.getAllData();
 

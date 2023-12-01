@@ -24,6 +24,7 @@ public class DataBaseAdapter {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(DataBaseHelper.NAME_COL, hotelModel.getName());
+        contentValues.put(DataBaseHelper.IMAGE_COL, hotelModel.getImage());
         contentValues.put(DataBaseHelper.LOCATION_COL, hotelModel.getLocation());
         contentValues.put(DataBaseHelper.DESCRIPTION_COL, hotelModel.getDescription());
         contentValues.put(DataBaseHelper.RATING_COL, hotelModel.getRating());
@@ -37,19 +38,20 @@ public class DataBaseAdapter {
         SQLiteDatabase writable = dataBaseHelper.getWritableDatabase();
         List<HotelModel> hotels = new ArrayList<>();
 
-        String[] cols = {DataBaseHelper.ID_COL, DataBaseHelper.NAME_COL, DataBaseHelper.LOCATION_COL, DataBaseHelper.DESCRIPTION_COL, DataBaseHelper.RATING_COL, DataBaseHelper.PRICE_COL};
+        String[] cols = {DataBaseHelper.ID_COL, DataBaseHelper.NAME_COL, DataBaseHelper.IMAGE_COL, DataBaseHelper.LOCATION_COL, DataBaseHelper.DESCRIPTION_COL, DataBaseHelper.RATING_COL, DataBaseHelper.PRICE_COL};
         Cursor cursor = writable.query(DataBaseHelper.TABLE_NAME, cols, null, null, null, null, null);
         cursor.moveToFirst();
 
         if (cursor.move(0)) {
             do {
                 String name = cursor.getString(1);
-                String location = cursor.getString(2);
-                String description = cursor.getString(3);
-                String rating = cursor.getString(4);
-                String price = cursor.getString(5);
+                int image = cursor.getInt(2);
+                String location = cursor.getString(3);
+                String description = cursor.getString(4);
+                String rating = cursor.getString(5);
+                String price = cursor.getString(6);
 
-                HotelModel hotel = new HotelModel(name, location, description, rating, price);
+                HotelModel hotel = new HotelModel(image, name, location, description, rating, price);
                 hotels.add(hotel);
             } while (cursor.moveToNext());
         }
@@ -67,6 +69,7 @@ public class DataBaseAdapter {
         private static final String TABLE_NAME = "TABLE_HOTELS";
         private static final String ID_COL = "id";
         private static final String NAME_COL = "name";
+        private static final String IMAGE_COL = "image";
         private static final String LOCATION_COL = "locations";
         private static final String DESCRIPTION_COL = "description";
         private static final String RATING_COL = "rating";
@@ -75,6 +78,7 @@ public class DataBaseAdapter {
         String query = "CREATE TABLE " + TABLE_NAME + " ( " +
                 ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 NAME_COL + " TEXT, " +
+                IMAGE_COL + " INTEGER, " +
                 LOCATION_COL + " TEXT, " +
                 DESCRIPTION_COL + " TEXT, " +
                 RATING_COL + " TEXT, " +
