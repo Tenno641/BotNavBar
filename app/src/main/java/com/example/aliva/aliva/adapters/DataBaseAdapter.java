@@ -16,9 +16,11 @@ public class DataBaseAdapter {
 
         private static final int DATABASE_VERSION = 1;
 
-        private static final String DATABASE_NAME = "TASKS";
+        private static final String DATABASE_NAME = "HOTELS";
 
-        private static final String TABLE_NAME = "TABLE_TASKS";
+        private static final String TABLE_NAME = "TABLE_HOTELS";
+
+        private static final String 
 
         String query = "CREATE TABLE " + TABLE_NAME + " ( " +
                 ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
