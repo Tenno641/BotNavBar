@@ -6,10 +6,18 @@ public class HotelModel {
     private String name;
     private String location;
     private String description;
-    private double rating;
-    private int price;
+    private String rating;
+    private String price;
 
-    public HotelModel(int image, String name, String location, String description, double rating, int price) {
+    public HotelModel(String name, String location, String description, String rating, String price) {
+        this.name = name;
+        this.location = location;
+        this.rating = rating;
+        this.price = price;
+        this.description = description;
+    }
+
+    public HotelModel(int image, String name, String location, String description, String rating, String price) {
         this.image = image;
         this.name = name;
         this.location = location;
@@ -50,19 +58,19 @@ public class HotelModel {
         this.description = description;
     }
 
-    public double getRating() {
+    public String getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 }

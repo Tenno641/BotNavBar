@@ -43,8 +43,8 @@ public class HomeDiscountsRecyclerViewAdapter extends RecyclerView.Adapter<HomeD
         holder.hotelImage.setImageResource(hotel.getImage());
         holder.hotelName.setText(hotel.getName());
         holder.HotelLocation.setText(hotel.getLocation());
-        holder.HotelRating.setText(Double.toString(hotel.getRating()));
-        holder.HotelPrice.setText(String.valueOf(hotel.getPrice()));
+        holder.HotelRating.setText(hotel.getRating());
+        holder.HotelPrice.setText(hotel.getPrice());
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, SelectedHotel.class);

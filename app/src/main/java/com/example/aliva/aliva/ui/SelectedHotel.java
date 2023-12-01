@@ -3,12 +3,10 @@ package com.example.aliva.aliva.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.aliva.R;
 
@@ -38,15 +36,15 @@ public class SelectedHotel extends AppCompatActivity {
         String name = intent.getStringExtra("name");
         String location = intent.getStringExtra("location");
         String description = intent.getStringExtra("description");
-        double rating = intent.getDoubleExtra("rating", 0);
-        int price = intent.getIntExtra("price", 0);
+        String rating = intent.getStringExtra("rating");
+        String price = intent.getStringExtra("price");
 
         hotelImage.setImageResource(image);
         hotelName.setText(name);
         hotelLocation.setText(location);
         hotelDescription.setText(description);
-        hotelRating.setText(String.valueOf(rating));
-        hotelPrice.setText(String.valueOf(price));
+        hotelRating.setText(rating);
+        hotelPrice.setText(price);
 
         backButton.setOnClickListener(v -> finish());
         favButton.setOnClickListener(v -> {

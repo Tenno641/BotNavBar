@@ -43,7 +43,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeSummerItem
         holder.hotelImage.setImageResource(hotel.getImage());
         holder.hotelName.setText(hotel.getName());
         holder.HotelLocation.setText(hotel.getLocation());
-        holder.HotelRating.setText(Double.toString(hotel.getRating()));
+        holder.HotelRating.setText(hotel.getRating());
         holder.HotelPrice.setText(String.valueOf(hotel.getPrice()));
 
         holder.itemView.setOnClickListener(v -> {

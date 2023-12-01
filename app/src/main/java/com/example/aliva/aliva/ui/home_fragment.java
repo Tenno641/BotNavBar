@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.aliva.R;
+import com.example.aliva.aliva.adapters.DataBaseAdapter;
 import com.example.aliva.aliva.adapters.HomeDiscountsRecyclerViewAdapter;
 import com.example.aliva.aliva.adapters.HomeRecyclerViewAdapter;
 import com.example.aliva.aliva.models.HotelModel;
@@ -45,22 +46,28 @@ public class home_fragment extends Fragment {
 
         Context context = getContext();
 
-        List<HotelModel> preMadeHotels = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            preMadeHotels.add(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak kda", "Bla Bla Bla Bla Bla Bla it's good we got service bla bla bla bla just come idiots",2.5, 2525));
-        }
+        DataBaseAdapter dataBaseAdapter = new DataBaseAdapter(context);
+        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+        dataBaseAdapter.insertRow(new HotelModel("Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+
+        List<HotelModel> preMadeHotels = dataBaseAdapter.getAllData();
 
         HomeSummerHotelsRV = view.findViewById(R.id.summerHotelRV);
         HomeSummerHotelsAdapter = new HomeRecyclerViewAdapter(context, preMadeHotels);
         HomeSummerHotelsRV.setAdapter(HomeSummerHotelsAdapter);
 
-        List<HotelModel> preMadeDiscounts = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            preMadeDiscounts.add(new HotelModel(R.drawable.backgroud, "Legendary Shit", "Hena Aw Henak", "Bla Bla Bla Bla Bla Bla it's good we got service bla bla bla bla just come idiots",7.5, 2560));
-        }
-
         HomeDiscountsRV = view.findViewById(R.id.HomeDiscountsRV);
-        homeDiscountsAdapter = new HomeDiscountsRecyclerViewAdapter(context, preMadeDiscounts);
+        homeDiscountsAdapter = new HomeDiscountsRecyclerViewAdapter(context, preMadeHotels);
         HomeDiscountsRV.setAdapter(homeDiscountsAdapter);
 
         return view;
