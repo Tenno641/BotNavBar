@@ -94,6 +94,7 @@
             app:layout_constraintTop_toTopOf="@id/price" />
 
         <ImageView
+            android:id="@+id/fav_image"
             android:layout_width="16dp"
             android:layout_height="16dp"
             android:backgroundTint="@color/black"

@@ -3,11 +3,13 @@ package com.example.aliva.aliva.adapters;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -54,6 +56,7 @@ public class HomeDiscountsRecyclerViewAdapter extends RecyclerView.Adapter<HomeD
             intent.putExtra("location", hotel.getLocation());
             intent.putExtra("description", hotel.getDescription());
             intent.putExtra("rating", hotel.getRating());
+            intent.putExtra("isFav", hotel.getIs_fav());
             intent.putExtra("price", hotel.getPrice());
             holder.itemView.getContext().startActivity(intent);
         });

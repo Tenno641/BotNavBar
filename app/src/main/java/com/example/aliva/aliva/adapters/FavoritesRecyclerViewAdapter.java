@@ -18,26 +18,26 @@ import com.example.aliva.aliva.ui.SelectedHotel;
 
 import java.util.List;
 
-public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeSummerItemHolder> {
+public class FavoritesRecyclerViewAdapter extends RecyclerView.Adapter<FavoritesItemHolder> {
 
     List<HotelModel> hotels;
     Context context;
 
-    public HomeRecyclerViewAdapter(Context context, List<HotelModel> hotels) {
+    public FavoritesRecyclerViewAdapter(Context context, List<HotelModel> hotels) {
         this.context = context;
         this.hotels = hotels;
     }
 
     @NonNull
     @Override
-    public HomeSummerItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_summer_hotel_item, parent, false);
-        return new HomeSummerItemHolder(view);
+    public FavoritesItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_favorites_item, parent, false);
+        return new FavoritesItemHolder(view);
     }
 
     @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(@NonNull HomeSummerItemHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FavoritesItemHolder holder, int position) {
         HotelModel hotel = hotels.get(position);
 
         holder.hotelImage.setImageResource(hotel.getImage());
@@ -67,7 +67,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeSummerItem
     }
 }
 
-class HomeSummerItemHolder extends RecyclerView.ViewHolder {
+class FavoritesItemHolder extends RecyclerView.ViewHolder {
 
     ImageView hotelImage;
     TextView hotelName;
@@ -75,7 +75,7 @@ class HomeSummerItemHolder extends RecyclerView.ViewHolder {
     TextView HotelRating;
     TextView HotelPrice;
 
-    public HomeSummerItemHolder(@NonNull View itemView) {
+    public FavoritesItemHolder(@NonNull View itemView) {
         super(itemView);
 
         hotelImage = itemView.findViewById(R.id.hotelImage);
@@ -86,3 +86,4 @@ class HomeSummerItemHolder extends RecyclerView.ViewHolder {
 
     }
 }
+

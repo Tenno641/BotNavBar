@@ -8,9 +8,10 @@ public class HotelModel {
     private String location;
     private String description;
     private String rating;
+    private int is_fav;
     private String price;
 
-    public HotelModel(String id, int image, String name, String location, String description, String rating, String price) {
+    public HotelModel(String id, int image, String name, String location, String description, String rating, String price, int is_fav) {
         this.id = id;
         this.image = image;
         this.name = name;
@@ -18,6 +19,7 @@ public class HotelModel {
         this.rating = rating;
         this.price = price;
         this.description = description;
+        this.is_fav = is_fav;
     }
 
     public HotelModel(int image, String name, String location, String description, String rating, String price) {
@@ -75,6 +77,14 @@ public class HotelModel {
 
     public void setRating(String rating) {
         this.rating = rating;
+    }
+
+    public int getIs_fav() {
+        return is_fav;
+    }
+
+    public void setIs_fav(int is_fav) {
+        this.is_fav = is_fav;
     }
 
     public String getPrice() {

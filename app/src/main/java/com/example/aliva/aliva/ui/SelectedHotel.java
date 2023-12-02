@@ -11,14 +11,15 @@ import android.widget.TextView;
 import com.example.aliva.R;
 import com.example.aliva.aliva.adapters.DataBaseAdapter;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 public class SelectedHotel extends AppCompatActivity {
 
     ImageView hotelImage;
     TextView hotelName, hotelLocation, hotelDescription, hotelRating, hotelPrice;
     Button backButton, favButton;
-    boolean isFav = false;
 
-    DataBaseAdapter dataBaseAdapter = new DataBaseAdapter(this);
+    DataBaseAdapter dataBaseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class SelectedHotel extends AppCompatActivity {
         String location = intent.getStringExtra("location");
         String description = intent.getStringExtra("description");
         String rating = intent.getStringExtra("rating");
+        int isFav = intent.getIntExtra("isFav", 0);
         String price = intent.getStringExtra("price");
 
         hotelImage.setImageResource(image);
@@ -50,18 +52,32 @@ public class SelectedHotel extends AppCompatActivity {
         hotelRating.setText(rating);
         hotelPrice.setText(price);
 
+        AtomicBoolean IsFavCheck = new AtomicBoolean(false);
+        IsFavCheck.set(isFav == 1);
+
+        if (IsFavCheck.get()) {
+            favButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_favorite_24, 0, 0, 0);
+        }
+        else {
+            favButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_favorite_border_24, 0, 0, 0);
+        }
+
+        dataBaseAdapter = new DataBaseAdapter(this);
+
         backButton.setOnClickListener(v -> finish());
         favButton.setOnClickListener(v -> {
 
             // Associated with database
 
-            if (isFav) {
+            if (IsFavCheck.get()) {
                 favButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_favorite_border_24, 0, 0, 0);
-                isFav = false;
+                dataBaseAdapter.addToFavorites(id, 0);
+                IsFavCheck.set(false);
             }
             else {
                 favButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_favorite_24, 0, 0, 0);
-                isFav = true;
+                dataBaseAdapter.addToFavorites(id, 1);
+                IsFavCheck.set(true);
             }
 
         });

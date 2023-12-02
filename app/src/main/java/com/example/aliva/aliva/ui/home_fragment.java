@@ -46,17 +46,17 @@ public class home_fragment extends Fragment {
         Context context = getContext();
 
         DataBaseAdapter dataBaseAdapter = new DataBaseAdapter(context);
-        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
 
         List<HotelModel> preMadeHotels = dataBaseAdapter.getAllData();
 

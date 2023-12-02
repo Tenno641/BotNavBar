@@ -28,6 +28,7 @@ public class DataBaseAdapter {
         contentValues.put(DataBaseHelper.LOCATION_COL, hotelModel.getLocation());
         contentValues.put(DataBaseHelper.DESCRIPTION_COL, hotelModel.getDescription());
         contentValues.put(DataBaseHelper.RATING_COL, hotelModel.getRating());
+        contentValues.put(DataBaseHelper.IS_FAV, hotelModel.getIs_fav());
         contentValues.put(DataBaseHelper.PRICE_COL, hotelModel.getPrice());
 
         readable.insertOrThrow(DataBaseHelper.TABLE_NAME, null, contentValues);
@@ -38,7 +39,7 @@ public class DataBaseAdapter {
         SQLiteDatabase writable = dataBaseHelper.getWritableDatabase();
         List<HotelModel> hotels = new ArrayList<>();
 
-        String[] cols = {DataBaseHelper.ID_COL, DataBaseHelper.NAME_COL, DataBaseHelper.IMAGE_COL, DataBaseHelper.LOCATION_COL, DataBaseHelper.DESCRIPTION_COL, DataBaseHelper.RATING_COL, DataBaseHelper.PRICE_COL};
+        String[] cols = {DataBaseHelper.ID_COL, DataBaseHelper.NAME_COL, DataBaseHelper.IMAGE_COL, DataBaseHelper.LOCATION_COL, DataBaseHelper.DESCRIPTION_COL, DataBaseHelper.RATING_COL, DataBaseHelper.IS_FAV, DataBaseHelper.PRICE_COL};
         Cursor cursor = writable.query(DataBaseHelper.TABLE_NAME, cols, null, null, null, null, null);
         cursor.moveToFirst();
 
@@ -50,10 +51,50 @@ public class DataBaseAdapter {
                 String location = cursor.getString(3);
                 String description = cursor.getString(4);
                 String rating = cursor.getString(5);
-                String price = cursor.getString(6);
+                int is_fav = cursor.getInt(6);
+                String price = cursor.getString(7);
 
-                HotelModel hotel = new HotelModel(id, image, name, location, description, rating, price);
+                HotelModel hotel = new HotelModel(id, image, name, location, description, rating, price, is_fav);
                 hotels.add(hotel);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return hotels;
+    }
+
+    public void addToFavorites(String id, int value) {
+        SQLiteDatabase writable = dataBaseHelper.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("is_fav", value);
+
+        writable.update(DataBaseHelper.TABLE_NAME, contentValues, "id=?", new String[]{id});
+
+    }
+
+    public List<HotelModel> getAllFavorites() {
+        SQLiteDatabase writable = dataBaseHelper.getWritableDatabase();
+        List<HotelModel> hotels = new ArrayList<>();
+
+        String[] cols = {DataBaseHelper.ID_COL, DataBaseHelper.NAME_COL, DataBaseHelper.IMAGE_COL, DataBaseHelper.LOCATION_COL, DataBaseHelper.DESCRIPTION_COL, DataBaseHelper.RATING_COL, DataBaseHelper.IS_FAV, DataBaseHelper.PRICE_COL};
+        Cursor cursor = writable.query(DataBaseHelper.TABLE_NAME, cols, null, null, null, null, null);
+        cursor.moveToFirst();
+
+        if (cursor.move(0)) {
+            do {
+                String id = cursor.getString(0);
+                String name = cursor.getString(1);
+                int image = cursor.getInt(2);
+                String location = cursor.getString(3);
+                String description = cursor.getString(4);
+                String rating = cursor.getString(5);
+                int is_fav = cursor.getInt(6);
+                String price = cursor.getString(7);
+
+                HotelModel hotel = new HotelModel(id, image, name, location, description, rating, price, is_fav);
+                if (hotel.getIs_fav() == 1) {
+                    hotels.add(hotel);
+                }
             } while (cursor.moveToNext());
         }
         cursor.close();
@@ -73,6 +114,7 @@ public class DataBaseAdapter {
         private static final String LOCATION_COL = "locations";
         private static final String DESCRIPTION_COL = "description";
         private static final String RATING_COL = "rating";
+        private static final String IS_FAV = "is_fav";
         private static final String PRICE_COL = "price";
 
         String query = "CREATE TABLE " + TABLE_NAME + " ( " +
@@ -82,6 +124,7 @@ public class DataBaseAdapter {
                 LOCATION_COL + " TEXT, " +
                 DESCRIPTION_COL + " TEXT, " +
                 RATING_COL + " TEXT, " +
+                IS_FAV + " INTEGER, " +
                 PRICE_COL + " TEXT );";
 
         public DataBaseHelper(Context context) {
