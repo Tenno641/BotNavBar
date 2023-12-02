@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.aliva.R;
+import com.example.aliva.aliva.adapters.DataBaseAdapter;
 
 public class SelectedHotel extends AppCompatActivity {
 
@@ -16,6 +17,8 @@ public class SelectedHotel extends AppCompatActivity {
     TextView hotelName, hotelLocation, hotelDescription, hotelRating, hotelPrice;
     Button backButton, favButton;
     boolean isFav = false;
+
+    DataBaseAdapter dataBaseAdapter = new DataBaseAdapter(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class SelectedHotel extends AppCompatActivity {
 
         Intent intent = getIntent();
         int image = intent.getIntExtra("image", 0);
+        String id = intent.getStringExtra("id");
         String name = intent.getStringExtra("name");
         String location = intent.getStringExtra("location");
         String description = intent.getStringExtra("description");

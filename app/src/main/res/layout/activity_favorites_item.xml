@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="350dp"
+    android:layout_width="match_parent"
     android:layout_height="165dp"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
@@ -74,23 +74,32 @@
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:layout_marginBottom="8dp"
             android:textColor="@color/brown"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/star"
+            app:layout_constraintStart_toEndOf="@+id/startFrom_text"
             tools:text="EGP 3589" />
 
         <TextView
+            android:id="@+id/startFrom_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
             android:text="@string/starting_from"
             android:textColor="@color/brown"
             android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="@id/price"
-            app:layout_constraintEnd_toStartOf="@id/price"
+            app:layout_constraintStart_toStartOf="@id/hotelName"
             app:layout_constraintTop_toTopOf="@id/price" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:backgroundTint="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/star"
+            app:layout_constraintTop_toTopOf="@id/startFrom_text"
+            tools:background="@drawable/ic_baseline_favorite_border_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

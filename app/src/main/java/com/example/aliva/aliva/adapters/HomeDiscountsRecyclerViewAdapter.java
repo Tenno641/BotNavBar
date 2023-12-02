@@ -48,6 +48,7 @@ public class HomeDiscountsRecyclerViewAdapter extends RecyclerView.Adapter<HomeD
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, SelectedHotel.class);
+            intent.putExtra("id", hotel.getId());
             intent.putExtra("image", hotel.getImage());
             intent.putExtra("name", hotel.getName());
             intent.putExtra("location", hotel.getLocation());

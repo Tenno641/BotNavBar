@@ -2,6 +2,7 @@ package com.example.aliva.aliva.models;
 
 public class HotelModel {
 
+    private String id;
     private int image;
     private String name;
     private String location;
@@ -9,7 +10,9 @@ public class HotelModel {
     private String rating;
     private String price;
 
-    public HotelModel(String name, String location, String description, String rating, String price) {
+    public HotelModel(String id, int image, String name, String location, String description, String rating, String price) {
+        this.id = id;
+        this.image = image;
         this.name = name;
         this.location = location;
         this.rating = rating;
@@ -24,6 +27,14 @@ public class HotelModel {
         this.rating = rating;
         this.price = price;
         this.description = description;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public int getImage() {

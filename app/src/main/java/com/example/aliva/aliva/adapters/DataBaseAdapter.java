@@ -44,6 +44,7 @@ public class DataBaseAdapter {
 
         if (cursor.move(0)) {
             do {
+                String id = cursor.getString(0);
                 String name = cursor.getString(1);
                 int image = cursor.getInt(2);
                 String location = cursor.getString(3);
@@ -51,13 +52,12 @@ public class DataBaseAdapter {
                 String rating = cursor.getString(5);
                 String price = cursor.getString(6);
 
-                HotelModel hotel = new HotelModel(image, name, location, description, rating, price);
+                HotelModel hotel = new HotelModel(id, image, name, location, description, rating, price);
                 hotels.add(hotel);
             } while (cursor.moveToNext());
         }
         cursor.close();
         return hotels;
-
     }
 
     public static class DataBaseHelper extends SQLiteOpenHelper {
