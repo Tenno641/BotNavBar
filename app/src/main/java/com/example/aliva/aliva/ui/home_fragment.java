@@ -1,6 +1,7 @@
 package com.example.aliva.aliva.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.aliva.R;
 import com.example.aliva.aliva.adapters.DataBaseAdapter;
@@ -28,6 +30,8 @@ public class home_fragment extends Fragment {
     RecyclerView HomeDiscountsRV;
     HomeDiscountsRecyclerViewAdapter homeDiscountsAdapter;
 
+    EditText searchBar;
+
     public home_fragment() {
 
     }
@@ -45,18 +49,24 @@ public class home_fragment extends Fragment {
 
         Context context = getContext();
 
+        searchBar = view.findViewById(R.id.searchBar);
+        searchBar.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), SearchActivity.class);
+            startActivity(intent);
+        });
+
         DataBaseAdapter dataBaseAdapter = new DataBaseAdapter(context);
 //        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
-//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel1", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel2", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel3", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel4", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel5", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel6", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel7", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel8", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel9", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel10", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
+//        dataBaseAdapter.insertRow(new HotelModel(R.drawable.backgroud, "Hotel11", "Henak Kda", "Aho wa7ed Bla Bla", "2.5", "2500"));
 
         List<HotelModel> preMadeHotels = dataBaseAdapter.getAllData();
 
