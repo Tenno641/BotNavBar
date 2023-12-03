@@ -26,6 +26,7 @@ public class SearchActivity extends AppCompatActivity {
     List<HotelModel> allHotels;
     SearchRecyclerViewAdapter searchRecyclerViewAdapter;
     DataBaseAdapter dataBaseAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +62,7 @@ public class SearchActivity extends AppCompatActivity {
 
     private void filterList(String text) {
         List<HotelModel> filterdList = new ArrayList<>();
-        for (HotelModel hotel: allHotels) {
+        for (HotelModel hotel : allHotels) {
             if (hotel.getName().toLowerCase().contains(text.toLowerCase())) {
                 filterdList.add(hotel);
             }

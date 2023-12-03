@@ -64,7 +64,10 @@ public class SelectedHotel extends AppCompatActivity {
 
         dataBaseAdapter = new DataBaseAdapter(this);
 
-        backButton.setOnClickListener(v -> finish());
+        backButton.setOnClickListener(v -> {
+            Intent intent1 = new Intent(this, MainActivity.class);
+            startActivity(intent1);
+        });
         favButton.setOnClickListener(v -> {
 
             // Associated with database

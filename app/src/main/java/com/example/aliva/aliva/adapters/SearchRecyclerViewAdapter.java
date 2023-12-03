@@ -31,7 +31,7 @@ public class SearchRecyclerViewAdapter extends RecyclerView.Adapter<SearchItemHo
     @NonNull
     @Override
     public SearchItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_discounts_hotel_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_search_item, parent, false);
         return new SearchItemHolder(view);
     }
 
@@ -84,9 +84,9 @@ class SearchItemHolder extends RecyclerView.ViewHolder {
     public SearchItemHolder(@NonNull View itemView) {
         super(itemView);
 
-        hotelImage = itemView.findViewById(R.id.hotelImage);
-        hotelName = itemView.findViewById(R.id.hotelName);
-        HotelLocation = itemView.findViewById(R.id.locationTV);
+        hotelImage = itemView.findViewById(R.id.hotel_image);
+        hotelName = itemView.findViewById(R.id.hotelName_text);
+        HotelLocation = itemView.findViewById(R.id.hotelLocation_text);
         HotelRating = itemView.findViewById(R.id.ratingTV);
         HotelPrice = itemView.findViewById(R.id.price);
 
