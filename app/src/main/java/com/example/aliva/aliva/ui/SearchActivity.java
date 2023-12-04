@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.aliva.R;
@@ -20,6 +21,7 @@ import java.util.List;
 public class SearchActivity extends AppCompatActivity {
     RecyclerView searchRecyclerView;
     EditText searchBar;
+    ImageView backButton;
     List<HotelModel> allHotels;
     SearchRecyclerViewAdapter searchRecyclerViewAdapter;
     DataBaseAdapter dataBaseAdapter;
@@ -28,6 +30,8 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        backButton = findViewById(R.id.back_image);
 
         searchRecyclerView = findViewById(R.id.hotels_recycler);
         searchBar = findViewById(R.id.searchBar);
@@ -53,6 +57,10 @@ public class SearchActivity extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
                 filterList(editable.toString());
             }
+        });
+
+        backButton.setOnClickListener(v -> {
+            finish();
         });
 
     }

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/baseline_arrow_back_ios_new_24"
+            app:layout_constraintBottom_toBottomOf="@id/paymentLabel_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/paymentLabel_text" />
+
+        <TextView
+            android:id="@+id/paymentLabel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:text="Payment"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/priceLabel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="Amount per night"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/paymentLabel_text" />
+
+        <TextView
+            android:id="@+id/price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="12345"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/priceLabel_text"
+            app:layout_constraintTop_toBottomOf="@id/priceLabel_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" $"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/price_text"
+            app:layout_constraintStart_toEndOf="@id/price_text"
+            app:layout_constraintTop_toTopOf="@id/price_text" />
+
+        <TextView
+            android:id="@+id/nightLabel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Nights Stayed"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/price_text"
+            app:layout_constraintTop_toBottomOf="@id/price_text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/to_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/discord_color"
+            android:text="TO"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/nightLabel_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/nightLabel_text"
+            app:shapeAppearance="@style/RightRoundedButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/From_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="2dp"
+            android:backgroundTint="@color/discord_color"
+            android:text="From"
+            android:textColor="@color/white"
+            app:layout_constraintBaseline_toBaselineOf="@id/to_button"
+            app:layout_constraintEnd_toStartOf="@id/to_button"
+            app:shapeAppearance="@style/LeftRoundedButton" />
+
+        <TextView
+            android:id="@+id/cardNameLabel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Name on card"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/nightLabel_text"
+            app:layout_constraintTop_toBottomOf="@id/nightLabel_text" />
+
+        <EditText
+            android:id="@+id/cardName_editText"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_input"
+            android:backgroundTint="@color/discord_color"
+            android:hint="Your Name On Card..."
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/light_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cardNameLabel_text"
+            app:layout_constraintTop_toBottomOf="@id/cardNameLabel_text" />
+
+        <TextView
+            android:id="@+id/cardNumberLabel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Name on card"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/nightLabel_text"
+            app:layout_constraintTop_toBottomOf="@id/cardName_editText" />
+
+        <EditText
+            android:id="@+id/cardNumber_editText"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_input"
+            android:backgroundTint="@color/discord_color"
+            android:hint="Your Card Number..."
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/light_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cardNameLabel_text"
+            app:layout_constraintTop_toBottomOf="@id/cardNumberLabel_text" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/expiryDate_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Expiry Date"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/cardNumber_editText"
+            app:layout_constraintTop_toBottomOf="@id/cardNumber_editText" />
+
+        <TextView
+            android:id="@+id/securityCode_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Security Code"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/expiryDate_text"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/expiryDate_text" />
+
+        <EditText
+            android:id="@+id/expiryDate_editText"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/custom_input"
+            android:backgroundTint="@color/discord_color"
+            android:hint="Expiry Date"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/light_white"
+            app:layout_constraintEnd_toEndOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="@id/expiryDate_text"
+            app:layout_constraintTop_toBottomOf="@id/expiryDate_text" />
+
+        <EditText
+            android:id="@+id/securityCode_editText"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/custom_input"
+            android:backgroundTint="@color/discord_color"
+            android:hint="Security Code"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/light_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/securityCode_text"
+            app:layout_constraintTop_toBottomOf="@id/securityCode_text" />
+
+        <TextView
+            android:id="@+id/postalCodeLabel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Postal Code"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/expiryDate_text"
+            app:layout_constraintTop_toBottomOf="@id/expiryDate_editText" />
+
+        <EditText
+            android:id="@+id/postalCode_editText"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_input"
+            android:backgroundTint="@color/discord_color"
+            android:hint="Postal Code"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/light_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/postalCodeLabel_text"
+            app:layout_constraintTop_toBottomOf="@id/postalCodeLabel_text" />
+
+        <Button
+            android:layout_width="128dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="64dp"
+            android:backgroundTint="@color/red"
+            android:text="Proceed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/postalCode_editText" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

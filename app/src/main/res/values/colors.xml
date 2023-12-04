@@ -9,6 +9,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="app_background">#FCF5ED</color>
+    <color name="discord_color">#6E6E6E</color>
+    <color name="light_white">#80FFFFFF</color>
     <color name="brown">#1F1717</color>
     <color name="light_brown">#661F1717</color>
     <color name="golden">#F4BF96</color>

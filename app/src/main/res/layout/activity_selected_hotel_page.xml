@@ -144,6 +144,7 @@
             app:layout_constraintTop_toTopOf="@id/price" />
 
         <Button
+            android:id="@+id/payment_button"
             android:layout_width="265dp"
             android:layout_height="50dp"
             android:layout_marginStart="64dp"

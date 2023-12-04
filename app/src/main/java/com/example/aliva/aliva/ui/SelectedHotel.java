@@ -17,7 +17,7 @@ public class SelectedHotel extends AppCompatActivity {
 
     ImageView hotelImage;
     TextView hotelName, hotelLocation, hotelDescription, hotelRating, hotelPrice;
-    Button backButton, favButton;
+    Button backButton, favButton, paymentButton;
 
     DataBaseAdapter dataBaseAdapter;
 
@@ -34,6 +34,7 @@ public class SelectedHotel extends AppCompatActivity {
         hotelPrice = findViewById(R.id.price);
         backButton = findViewById(R.id.backBtn);
         favButton = findViewById(R.id.favBtn);
+        paymentButton = findViewById(R.id.payment_button);
 
         Intent intent = getIntent();
         int image = intent.getIntExtra("image", 0);
@@ -80,6 +81,12 @@ public class SelectedHotel extends AppCompatActivity {
                 IsFavCheck.set(true);
             }
 
+        });
+
+        paymentButton.setOnClickListener(v -> {
+            Intent toPaymentPage = new Intent(this, PaymentActivity.class);
+            toPaymentPage.putExtra("price", price);
+            startActivity(toPaymentPage);
         });
 
     }

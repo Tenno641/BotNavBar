@@ -6,23 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".aliva.ui.SearchActivity">
 
+    <ImageView
+        android:id="@+id/back_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/baseline_arrow_back_ios_new_24"
+        app:layout_constraintBottom_toBottomOf="@id/searchBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/searchBar" />
+
     <EditText
         android:id="@+id/searchBar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:autofillHints=""
         android:background="@drawable/edittext_background"
+        android:hint="@string/search"
         android:imeOptions="actionDone"
         android:inputType="text"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:hint="@string/search"
         android:textColor="@color/brown"
         android:textColorHint="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/back_image"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
