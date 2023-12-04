@@ -66,7 +66,7 @@ public class SearchActivity extends AppCompatActivity {
         }
 
         if (filterdList.isEmpty()) {
-            Toast.makeText(this, "No Data Found", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "No Data Found", Toast.LENGTH_SHORT).show();
         } else {
             searchRecyclerViewAdapter.setFilterList(filterdList);
         }
