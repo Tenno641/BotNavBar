@@ -16,4 +16,9 @@
         android:title="@string/settings"
         android:icon="@drawable/ic_baseline_settings_24"/>
 
+    <item
+        android:id="@+id/adminItem"
+        android:title="@string/admin"
+        android:icon="@drawable/baseline_admin_panel_settings_24"/>
+
 </menu>

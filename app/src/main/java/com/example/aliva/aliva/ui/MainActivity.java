@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+    static String permissions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +23,29 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             Intent intent = getIntent();
+
+            String restrictions = intent.getStringExtra("permissions");
+            if (restrictions != null) {
+                permissions = restrictions;
+            }
+
             String mode = intent.getStringExtra("mode");
-            if (mode == null) {
-                replaceFragment(new home_fragment());
+            if (permissions.equals("user")) {
+                bottomNavigationView.getMenu().removeItem(R.id.adminItem);
+                if (mode == null) {
+                    replaceFragment(new home_fragment());
+                } else {
+                    replaceFragment(new favfragment());
+                    bottomNavigationView.getMenu().removeItem(R.id.adminItem);
+                    bottomNavigationView.setSelectedItemId(R.id.favItem);
+                }
             } else {
-                replaceFragment(new favfragment());
-                bottomNavigationView.setSelectedItemId(R.id.favItem);
+                if (mode == null) {
+                    replaceFragment(new home_fragment());
+                } else {
+                    replaceFragment(new favfragment());
+                    bottomNavigationView.setSelectedItemId(R.id.favItem);
+                }
             }
         }
 
