@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aliva.R;
-import com.example.aliva.aliva.models.HotelModel;
+import com.example.aliva.aliva.pojos.HotelModel;
 import com.example.aliva.aliva.ui.SelectedHotel;
 
 import java.util.List;

@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.aliva.aliva.models.HotelModel;
+import com.example.aliva.aliva.pojos.HotelModel;
 
 import java.util.ArrayList;
 import java.util.List;

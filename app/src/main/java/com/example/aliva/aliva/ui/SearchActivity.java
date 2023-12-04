@@ -6,17 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
 import android.widget.EditText;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.aliva.R;
 import com.example.aliva.aliva.adapters.DataBaseAdapter;
 import com.example.aliva.aliva.adapters.SearchRecyclerViewAdapter;
-import com.example.aliva.aliva.models.HotelModel;
+import com.example.aliva.aliva.pojos.HotelModel;
 
-import java.sql.DatabaseMetaData;
 import java.util.ArrayList;
 import java.util.List;
 

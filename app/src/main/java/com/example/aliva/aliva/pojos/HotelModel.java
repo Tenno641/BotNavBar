@@ -1,4 +1,4 @@
-package com.example.aliva.aliva.models;
+package com.example.aliva.aliva.pojos;
 
 public class HotelModel {
 

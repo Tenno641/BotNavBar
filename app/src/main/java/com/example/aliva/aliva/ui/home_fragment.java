@@ -16,7 +16,7 @@ import com.example.aliva.R;
 import com.example.aliva.aliva.adapters.DataBaseAdapter;
 import com.example.aliva.aliva.adapters.HomeDiscountsRecyclerViewAdapter;
 import com.example.aliva.aliva.adapters.HomeRecyclerViewAdapter;
-import com.example.aliva.aliva.models.HotelModel;
+import com.example.aliva.aliva.pojos.HotelModel;
 
 import java.util.List;
 

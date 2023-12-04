@@ -13,9 +13,8 @@ import android.view.ViewGroup;
 import com.example.aliva.R;
 import com.example.aliva.aliva.adapters.DataBaseAdapter;
 import com.example.aliva.aliva.adapters.FavoritesRecyclerViewAdapter;
-import com.example.aliva.aliva.models.HotelModel;
+import com.example.aliva.aliva.pojos.HotelModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class favfragment extends Fragment {
