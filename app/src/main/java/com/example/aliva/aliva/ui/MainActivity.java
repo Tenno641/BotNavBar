@@ -67,6 +67,11 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
 
+            if (item.getItemId() == R.id.adminItem && !item.isChecked()) {
+                replaceFragment(new AdminFragment());
+                return true;
+            }
+
             return true;
 
         });
