@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aliva.R;
 import com.example.aliva.aliva.pojos.HotelModel;
+import com.example.aliva.aliva.ui.SelectedFavHotel;
 import com.example.aliva.aliva.ui.SelectedHotel;
 
 import java.util.List;
@@ -47,7 +48,7 @@ public class FavoritesRecyclerViewAdapter extends RecyclerView.Adapter<Favorites
         holder.HotelPrice.setText(String.valueOf(hotel.getPrice()));
 
         holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(context, SelectedHotel.class);
+            Intent intent = new Intent(context, SelectedFavHotel.class);
             intent.putExtra("id", hotel.getId());
             intent.putExtra("image", hotel.getImage());
             intent.putExtra("name", hotel.getName());

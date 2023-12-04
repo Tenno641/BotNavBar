@@ -13,7 +13,7 @@ import com.example.aliva.aliva.adapters.DataBaseAdapter;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class SelectedHotel extends AppCompatActivity {
+public class SelectedFavHotel extends AppCompatActivity {
 
     ImageView hotelImage;
     TextView hotelName, hotelLocation, hotelDescription, hotelRating, hotelPrice;
@@ -24,7 +24,7 @@ public class SelectedHotel extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selected_hotel_page);
+        setContentView(R.layout.activity_selected_fav_hotel);
 
         hotelImage = findViewById(R.id.image);
         hotelName = findViewById(R.id.hotelName);
@@ -64,7 +64,11 @@ public class SelectedHotel extends AppCompatActivity {
 
         dataBaseAdapter = new DataBaseAdapter(this);
 
-        backButton.setOnClickListener(v -> finish());
+        backButton.setOnClickListener(v -> {
+            Intent intent1 = new Intent(this, MainActivity.class);
+            intent1.putExtra("mode", "fav");
+            startActivity(intent1);
+        });
         favButton.setOnClickListener(v -> {
 
             // Associated with database

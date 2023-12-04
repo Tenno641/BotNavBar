@@ -3,6 +3,7 @@ package com.example.aliva.aliva.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.aliva.R;
@@ -16,14 +17,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
-                    .add(R.id.homeFrame, home_fragment.class, null)
-                    .commit();
-        }
 
         bottomNavigationView = findViewById(R.id.botnav);
+
+        if (savedInstanceState == null) {
+            Intent intent = getIntent();
+            String mode = intent.getStringExtra("mode");
+            if (mode == null) {
+                replaceFragment(new home_fragment());
+            } else {
+                replaceFragment(new favfragment());
+                bottomNavigationView.setSelectedItemId(R.id.favItem);
+            }
+        }
+
         bottomNavigationView.setOnItemSelectedListener(item -> {
 
             if (item.getItemId() == R.id.homeItem && !item.isChecked()) {
