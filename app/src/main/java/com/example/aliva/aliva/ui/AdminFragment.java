@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.aliva.R;
 import com.example.aliva.aliva.adapters.DataBaseAdapter;
@@ -19,7 +20,7 @@ public class AdminFragment extends Fragment {
 
     Button addMainButton, updateMainButton, deleteMainButton, addButton, updateButton, deleteButton;
     LinearLayout addPage, updatePage, deletePage;
-    EditText hotelName, hotelLocation, hotelDescription, hotelPrice, updateHotel, deleteHotel;
+    EditText hotelName, hotelLocation, hotelDescription, hotelPrice, updateHotelEditText, deleteHotelEditText;
 
     DataBaseAdapter dataBaseAdapter;
     boolean addVisible = false;
@@ -52,10 +53,13 @@ public class AdminFragment extends Fragment {
 
         updateMainButton = view.findViewById(R.id.updateHotel_button);
         // update page views
-
+        updateButton = view.findViewById(R.id.updateHotelID_button);
+        updateHotelEditText = view.findViewById(R.id.updateHotelID_editText);
 
         deleteMainButton = view.findViewById(R.id.deleteHotel_button);
         // delete page views
+        deleteButton = view.findViewById(R.id.deleteHotelID_button);
+        deleteHotelEditText = view.findViewById(R.id.deleteHotelID_editText);
 
         addPage = view.findViewById(R.id.addHotelPage_layout);
         updatePage = view.findViewById(R.id.updateHotelPage_layout);
@@ -85,6 +89,22 @@ public class AdminFragment extends Fragment {
             String description = hotelDescription.getText().toString();
             String price = hotelPrice.getText().toString();
             dataBaseAdapter.insertRow(new HotelModel(R.drawable.test, name, location, description, "0.0", price));
+
+            hotelName.setText("");
+            hotelLocation.setText("");
+            hotelDescription.setText("");
+            hotelPrice.setText("");
+
+        });
+
+        updateButton.setOnClickListener(v -> {
+
+        });
+
+        deleteButton.setOnClickListener(v -> {
+            String hotelId = deleteHotelEditText.getText().toString();
+            dataBaseAdapter.deleteHotelById(hotelId);
+            deleteHotelEditText.setText("");
         });
 
         return view;

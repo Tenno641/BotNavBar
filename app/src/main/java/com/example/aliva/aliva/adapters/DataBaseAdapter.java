@@ -72,6 +72,26 @@ public class DataBaseAdapter {
 
     }
 
+    public void deleteHotelById(String id) {
+        SQLiteDatabase writable = dataBaseHelper.getWritableDatabase();
+
+        writable.delete(DataBaseHelper.TABLE_NAME, "id=?", new String[]{id});
+
+    }
+
+    public void updateHotel(String id, String newName, String newLocation, String newDescription, String newPrice) {
+        SQLiteDatabase writable = dataBaseHelper.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", newName);
+        contentValues.put("locations", newLocation);
+        contentValues.put("description", newDescription);
+        contentValues.put("price", newPrice);
+
+        writable.update(DataBaseHelper.TABLE_NAME, contentValues, "id=?", new String[]{id});
+
+    }
+
     public List<HotelModel> getAllFavorites() {
         SQLiteDatabase writable = dataBaseHelper.getWritableDatabase();
         List<HotelModel> hotels = new ArrayList<>();

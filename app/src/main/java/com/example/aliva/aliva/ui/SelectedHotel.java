@@ -53,8 +53,7 @@ public class SelectedHotel extends AppCompatActivity {
         hotelRating.setText(rating);
         hotelPrice.setText(price);
 
-        AtomicBoolean IsFavCheck = new AtomicBoolean(false);
-        IsFavCheck.set(isFav == 1);
+        AtomicBoolean IsFavCheck = new AtomicBoolean(isFav == 1);
 
         if (IsFavCheck.get()) {
             favButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_favorite_24, 0, 0, 0);

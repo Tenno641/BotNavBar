@@ -199,6 +199,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/updateHotelID_editText"
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_marginEnd="16dp"
@@ -213,6 +214,7 @@
                 android:textSize="16sp" />
 
             <Button
+                android:id="@+id/updateHotelID_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -252,6 +254,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/deleteHotelID_editText"
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_marginEnd="16dp"
@@ -266,6 +269,7 @@
                 android:textSize="16sp" />
 
             <Button
+                android:id="@+id/deleteHotelID_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
