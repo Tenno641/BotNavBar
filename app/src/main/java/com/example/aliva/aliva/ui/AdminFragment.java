@@ -85,12 +85,6 @@ public class AdminFragment extends Fragment {
             String description = hotelDescription.getText().toString();
             String price = hotelPrice.getText().toString();
             dataBaseAdapter.insertRow(new HotelModel(R.drawable.test, name, location, description, "0.0", price));
-
-            hotelName.setText("");
-            hotelLocation.setText("");
-            hotelDescription.setText("");
-            hotelPrice.setText("");
-
         });
 
         return view;
