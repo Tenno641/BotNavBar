@@ -56,6 +56,7 @@
                     android:hint="Hotel Name.."
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/light_white"
                     android:textSize="16sp" />
 
@@ -87,6 +88,7 @@
                     android:hint="Hotel Location.."
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/light_white"
                     android:textSize="16sp" />
 
@@ -118,6 +120,7 @@
                     android:hint="Hotel Description.."
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/light_white"
                     android:textSize="16sp" />
 
@@ -149,6 +152,7 @@
                     android:hint="Price Per Night.."
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/light_white"
                     android:textSize="16sp" />
 
@@ -204,6 +208,7 @@
                 android:hint="@string/hotel_id"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
+                android:textColor="@color/white"
                 android:textColorHint="@color/light_white"
                 android:textSize="16sp" />
 
@@ -256,6 +261,7 @@
                 android:hint="@string/hotel_id"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
+                android:textColor="@color/white"
                 android:textColorHint="@color/light_white"
                 android:textSize="16sp" />
 
