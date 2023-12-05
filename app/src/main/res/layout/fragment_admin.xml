@@ -1,14 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".aliva.ui.AdminFragment">
+    android:background="@color/app_background">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <Button
+            android:id="@+id/addHotel_button"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/red"
+            android:drawableEnd="@drawable/baseline_keyboard_arrow_down_24"
+            android:text="add an Hotel" />
+
+        <LinearLayout
+            android:id="@+id/addHotelPage_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/hotelNameLabel_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/name"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/nameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/custom_input"
+                    android:backgroundTint="@color/discord_color"
+                    android:hint="Hotel Name.."
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColorHint="@color/light_white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/hotelLocationLabel_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/location"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/locationEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/custom_input"
+                    android:backgroundTint="@color/discord_color"
+                    android:hint="Hotel Location.."
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColorHint="@color/light_white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/hotelDescriptionLabel_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/description"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/DescriptionEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/custom_input"
+                    android:backgroundTint="@color/discord_color"
+                    android:hint="Hotel Description.."
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColorHint="@color/light_white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/hotelPriceLabel_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/price_per_night"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/priceEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/custom_input"
+                    android:backgroundTint="@color/discord_color"
+                    android:hint="Price Per Night.."
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColorHint="@color/light_white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submitAddingHotel_button"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/red"
+                android:text="@string/add" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/updateHotel_button"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/red"
+            android:drawableEnd="@drawable/baseline_keyboard_arrow_down_24"
+            android:text="@string/update_an_hotel" />
+
+        <LinearLayout
+            android:id="@+id/updateHotelPage_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:weightSum="5"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/enter_hotel_id"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="3"
+                android:background="@drawable/custom_input"
+                android:backgroundTint="@color/discord_color"
+                android:hint="@string/hotel_id"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColorHint="@color/light_white"
+                android:textSize="16sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="2"
+                android:backgroundTint="@color/red"
+                android:text="@string/update" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/deleteHotel_button"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/red"
+            android:drawableEnd="@drawable/baseline_keyboard_arrow_down_24"
+            android:text="@string/delete_an_hotel" />
+
+        <LinearLayout
+            android:id="@+id/deleteHotelPage_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:weightSum="5"
+            tools:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/enter_hotel_id"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="3"
+                android:background="@drawable/custom_input"
+                android:backgroundTint="@color/discord_color"
+                android:hint="@string/hotel_id"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColorHint="@color/light_white"
+                android:textSize="16sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="2"
+                android:backgroundTint="@color/red"
+                android:text="@string/delete" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

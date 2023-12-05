@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -58,6 +59,7 @@ public class FavoritesRecyclerViewAdapter extends RecyclerView.Adapter<Favorites
             intent.putExtra("isFav", hotel.getIs_fav());
             intent.putExtra("price", hotel.getPrice());
             holder.itemView.getContext().startActivity(intent);
+            Toast.makeText(context, hotel.getId(), Toast.LENGTH_SHORT).show();
         });
 
     }

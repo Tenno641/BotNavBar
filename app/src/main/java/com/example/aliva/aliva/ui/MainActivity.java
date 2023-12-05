@@ -1,10 +1,12 @@
 package com.example.aliva.aliva.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.aliva.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.botnav);
 
         if (savedInstanceState == null) {
+
             Intent intent = getIntent();
 
             String restrictions = intent.getStringExtra("permissions");
@@ -30,23 +33,17 @@ public class MainActivity extends AppCompatActivity {
             }
 
             String mode = intent.getStringExtra("mode");
-            if (permissions.equals("user")) {
-                bottomNavigationView.getMenu().removeItem(R.id.adminItem);
-                if (mode == null) {
-                    replaceFragment(new home_fragment());
-                } else {
-                    replaceFragment(new favfragment());
-                    bottomNavigationView.getMenu().removeItem(R.id.adminItem);
-                    bottomNavigationView.setSelectedItemId(R.id.favItem);
-                }
+            if (mode == null) {
+                replaceFragment(new home_fragment());
             } else {
-                if (mode == null) {
-                    replaceFragment(new home_fragment());
-                } else {
-                    replaceFragment(new favfragment());
-                    bottomNavigationView.setSelectedItemId(R.id.favItem);
-                }
+                replaceFragment(new favfragment());
+                bottomNavigationView.setSelectedItemId(R.id.favItem);
             }
+
+        }
+
+        if (permissions.equals("user")) {
+            bottomNavigationView.getMenu().removeItem(R.id.adminItem);
         }
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -85,4 +82,24 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
     }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+        savedInstanceState.putString("permissions", permissions);
+        Toast.makeText(this, "Saved" + permissions, Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        permissions = savedInstanceState.getString("permissions");
+
+        Toast.makeText(this, "Restored" + permissions, Toast.LENGTH_SHORT).show();
+
+    }
+
 }
+
